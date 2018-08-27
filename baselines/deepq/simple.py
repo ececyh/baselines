@@ -167,6 +167,8 @@ def learn(env,
     sess = tf.Session()
     sess.__enter__()
 
+    logger.configure()    
+
     # capture the shape outside the closure so that the env object is not serialized
     # by cloudpickle when serializing make_obs_ph
     observation_space_shape = env.observation_space.shape
